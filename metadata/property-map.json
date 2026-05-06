@@ -1,0 +1,28 @@
+{
+  "repo": "watch-data-lineage-pipe",
+  "language": "C++",
+  "category": "Data engineering",
+  "goal": "Build a C++ toolkit that studies lineage behavior through node-edge fixtures, with cycle and reachability reports and local-only command execution.",
+  "weights": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 2
+  },
+  "thresholds": {
+    "ship": 208,
+    "watch": 127
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}
