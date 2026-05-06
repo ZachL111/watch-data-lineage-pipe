@@ -1,0 +1,73 @@
+{
+  "repo": "watch-data-lineage-pipe",
+  "language": "C++",
+  "category": "Data engineering",
+  "goal": "Build a C++ toolkit that studies lineage behavior through node-edge fixtures, with cycle and reachability reports and local-only command execution.",
+  "review_model": {
+    "terms": [
+      "schema drift",
+      "lineage depth",
+      "partition skew",
+      "quality gap"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "schema drift",
+      "signal": 65,
+      "slack": 43,
+      "drag": 15,
+      "confidence": 46,
+      "score": 174,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lineage depth",
+      "signal": 71,
+      "slack": 25,
+      "drag": 11,
+      "confidence": 70,
+      "score": 204,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "partition skew",
+      "signal": 54,
+      "slack": 44,
+      "drag": 26,
+      "confidence": 63,
+      "score": 137,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "quality gap",
+      "signal": 80,
+      "slack": 54,
+      "drag": 27,
+      "confidence": 49,
+      "score": 182,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "schema drift",
+      "signal": 91,
+      "slack": 37,
+      "drag": 11,
+      "confidence": 83,
+      "score": 269,
+      "lane": "ship"
+    }
+  ]
+}
